@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bags and Wallets | Tutu's Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4B0082;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .slides {
+      display: flex;
+      width: 500%;
+      animation: slide 15s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% {margin-left: 0%;}
+      20% {margin-left: 0%;}
+      25% {margin-left: -100%;}
+      45% {margin-left: -100%;}
+      50% {margin-left: -200%;}
+      70% {margin-left: -200%;}
+      75% {margin-left: -300%;}
+      95% {margin-left: -300%;}
+      100% {margin-left: 0%;}
+    }
+    h2 {
+      text-align: center;
+      color: #ffccff;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      width: 220px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product h3, .product p {
+      margin: 10px 0;
+    }
+    .product button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #cart-total {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 20px 0;
+      color: #ff9999;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bags and Wallets</h1>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="bag1.jpg" alt="Bag 1">
+      <img src="bag2.jpg" alt="Bag 2">
+      <img src="wallet1.jpg" alt="Wallet 1">
+      <img src="wallet2.jpg" alt="Wallet 2">
+    </div>
+  </div>
+
+  <h2>Our Collection</h2>
+  <div id="cart-total">Total: Rs. 0</div>
+
+  <div class="products" id="product-list">
+    <!-- Items dynamically inserted below -->
+  </div>
+
+  <footer>
+    &copy; 2025 Tutu's Gallery. All rights reserved.
+  </footer>
+
+  <script>
+    const items = [
+      {name: "Ladies Handbag", price: 3500, image: "bag1.jpg"},
+      {name: "Gents Office Bag", price: 4200, image: "bag2.jpg"},
+      {name: "Ladies Purse", price: 1800, image: "wallet1.jpg"},
+      {name: "Gents Wallet", price: 2000, image: "wallet2.jpg"},
+      {name: "Sling Bag", price: 2200, image: "bag3.jpg"},
+      {name: "Laptop Bag", price: 5500, image: "bag4.jpg"},
+      {name: "Leather Wallet", price: 2300, image: "wallet3.jpg"},
+      {name: "Travel Backpack", price: 4800, image: "bag5.jpg"},
+      {name: "Mini Crossbody Bag", price: 2600, image: "bag6.jpg"},
+      {name: "Wallet with Chain", price: 1900, image: "wallet4.jpg"},
+      {name: "Zipper Wallet", price: 1700, image: "wallet5.jpg"},
+      {name: "Tote Bag", price: 3000, image: "bag7.jpg"},
+      {name: "Duffel Bag", price: 6000, image: "bag8.jpg"},
+      {name: "Kids Backpack", price: 2400, image: "bag9.jpg"},
+      {name: "Classic Wallet", price: 2100, image: "wallet6.jpg"},
+    ];
+
+    const productList = document.getElementById("product-list");
+    let total = 0;
+
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "product";
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <h3>${item.name}</h3>
+        <p>Rs. ${item.price}</p>
+        <button onclick="addToCart(${item.price})">Add to Cart</button>
+      `;
+      productList.appendChild(div);
+    });
+
+    function addToCart(price) {
+      total += price;
+      document.getElementById("cart-total").innerText = `Total: Rs. ${total}`;
+    }
+  </script>
+</body>
+</html>

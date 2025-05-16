@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing | Tutu's Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      background-color: #4B0082;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      max-height: 300px;
+    }
+    .slides {
+      display: flex;
+      width: 500%;
+      animation: slide 15s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
+    @keyframes slide {
+      0% { margin-left: 0%; }
+      20% { margin-left: 0%; }
+      25% { margin-left: -100%; }
+      45% { margin-left: -100%; }
+      50% { margin-left: -200%; }
+      70% { margin-left: -200%; }
+      75% { margin-left: -300%; }
+      95% { margin-left: -300%; }
+      100% { margin-left: 0%; }
+    }
+    .shop-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .item {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+    }
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .item h3, .item p {
+      margin: 10px 0;
+    }
+    .item button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .item button:hover {
+      background-color: darkred;
+    }
+    .cart-total {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.8em;
+    }
+    .fa-facebook { color: #1877F2; }
+    .fa-whatsapp { color: #25D366; }
+    .fa-youtube { color: #FF0000; }
+    .fa-tiktok { color: #000000; background: white; border-radius: 5px; padding: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clothing - Tutu's Gallery</h1>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="clothing1.jpg" alt="Slide 1">
+      <img src="clothing2.jpg" alt="Slide 2">
+      <img src="clothing3.jpg" alt="Slide 3">
+      <img src="clothing4.jpg" alt="Slide 4">
+    </div>
+  </div>
+
+  <div class="shop-section">
+    <h2>Stylish & Comfortable Clothing</h2>
+    <div class="cart-total">Total: Rs. <span id="cart-total">0.00</span></div>
+    <div class="items">
+      <div class="item"><img src="c1.jpg" alt="T-shirt"><h3>Men's T-shirt</h3><p>Rs. 1,200</p><button onclick="addToCart(1200)">Add to Cart</button></div>
+      <div class="item"><img src="c2.jpg" alt="Dress"><h3>Girls' Dress</h3><p>Rs. 2,500</p><button onclick="addToCart(2500)">Add to Cart</button></div>
+      <div class="item"><img src="c3.jpg" alt="Kids Set"><h3>Kids' Set</h3><p>Rs. 1,800</p><button onclick="addToCart(1800)">Add to Cart</button></div>
+      <div class="item"><img src="c4.jpg" alt="Jeans"><h3>Men's Jeans</h3><p>Rs. 2,200</p><button onclick="addToCart(2200)">Add to Cart</button></div>
+      <div class="item"><img src="c5.jpg" alt="Blouse"><h3>Women's Blouse</h3><p>Rs. 1,700</p><button onclick="addToCart(1700)">Add to Cart</button></div>
+      <div class="item"><img src="c6.jpg" alt="Shorts"><h3>Kids' Shorts</h3><p>Rs. 1,000</p><button onclick="addToCart(1000)">Add to Cart</button></div>
+      <div class="item"><img src="c7.jpg" alt="Skirt"><h3>Girls' Skirt</h3><p>Rs. 1,400</p><button onclick="addToCart(1400)">Add to Cart</button></div>
+      <div class="item"><img src="c8.jpg" alt="Shirt"><h3>Men's Shirt</h3><p>Rs. 1,900</p><button onclick="addToCart(1900)">Add to Cart</button></div>
+      <div class="item"><img src="c9.jpg" alt="Saree"><h3>Women's Saree</h3><p>Rs. 3,200</p><button onclick="addToCart(3200)">Add to Cart</button></div>
+      <div class="item"><img src="c10.jpg" alt="Hoodie"><h3>Unisex Hoodie</h3><p>Rs. 2,800</p><button onclick="addToCart(2800)">Add to Cart</button></div>
+      <div class="item"><img src="c11.jpg" alt="Baby Romper"><h3>Baby Romper</h3><p>Rs. 950</p><button onclick="addToCart(950)">Add to Cart</button></div>
+      <div class="item"><img src="c12.jpg" alt="Kids Frock"><h3>Kids' Frock</h3><p>Rs. 1,300</p><button onclick="addToCart(1300)">Add to Cart</button></div>
+      <div class="item"><img src="c13.jpg" alt="Underwear"><h3>Men's Underwear</h3><p>Rs. 500</p><button onclick="addToCart(500)">Add to Cart</button></div>
+      <div class="item"><img src="c14.jpg" alt="Women's Lingerie"><h3>Women's Lingerie</h3><p>Rs. 1,200</p><button onclick="addToCart(1200)">Add to Cart</button></div>
+      <div class="item"><img src="c15.jpg" alt="Kids Pajamas"><h3>Kids' Pajamas</h3><p>Rs. 1,100</p><button onclick="addToCart(1100)">Add to Cart</button></div>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    let total = 0;
+    function addToCart(price) {
+      total += price;
+      document.getElementById('cart-total').innerText = total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
